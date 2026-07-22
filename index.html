@@ -1,99 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chip Seller</title>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s);
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init', '4307248186205296');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4307248186205296&ev=PageView&noscript=1"
-/></noscript>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4307248186205296&ev=PageView&noscript=1"/>
+</noscript>
 <!-- End Meta Pixel Code -->
+
 <style>
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#111;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-color:white;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#111827;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:#fff;
 }
 
 .card{
-width:340px;
-background:#1d1d1d;
-padding:25px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 20px rgba(255,215,0,.3);
+    width:340px;
+    background:#1f2937;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(255,193,7,.3);
 }
 
-img{
-width:130px;
-border-radius:25px;
+.card img{
+    width:120px;
+    border-radius:20px;
 }
 
 h1{
-margin-top:15px;
+    margin:15px 0 10px;
 }
 
 p{
-color:#ccc;
+    color:#d1d5db;
+    line-height:1.5;
 }
 
-a{
-display:block;
-margin-top:25px;
-padding:15px;
-background:#FFC107;
-color:#000;
-font-weight:bold;
-text-decoration:none;
-border-radius:40px;
-font-size:20px;
+#joinBtn{
+    display:block;
+    margin-top:25px;
+    padding:16px;
+    background:#FFC107;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:40px;
+    font-size:22px;
+    transition:.3s;
 }
 
-a:hover{
-background:#ffb300;
+#joinBtn:hover{
+    background:#ffb300;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="card">
 
 <img src="./logo.jpeg" alt="Logo">
+
 <h1>Chip Seller</h1>
 
 <p>Join our trusted Telegram community for premium deals and instant updates.</p>
 
-<a href="https://t.me/chipsellerinstall"
-   target="_blank"
-   onclick="event.preventDefault();
-            fbq('track', 'Lead');
-            setTimeout(() => {
-              window.open(this.href, '_blank');
-            }, 500);
-            return false;">
-    Join Telegram
+<a id="joinBtn" href="https://t.me/chipsellerinstall" target="_blank">
+Join Telegram
 </a>
 
 </div>
+
+<script>
+document.getElementById("joinBtn").addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    fbq('track', 'Lead', {}, function () {
+        window.open("https://t.me/chipsellerinstall", "_blank");
+    });
+
+    // Fallback if callback doesn't fire
+    setTimeout(function(){
+        window.open("https://t.me/chipsellerinstall", "_blank");
+    },1000);
+
+});
+</script>
 
 </body>
 </html>
