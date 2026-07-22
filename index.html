@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,8 @@ t.async=!0;
 t.src=v;
 s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s);
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '4307248186205296');
 fbq('track', 'PageView');
@@ -34,58 +35,56 @@ src="https://www.facebook.com/tr?id=4307248186205296&ev=PageView&noscript=1"/>
 
 <style>
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#111827;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    color:#fff;
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
 }
 
 .card{
-    width:340px;
-    background:#1f2937;
-    padding:25px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 0 20px rgba(255,193,7,.3);
+width:340px;
+background:#1d1d1d;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 20px rgba(255,215,0,.3);
 }
 
-.card img{
-    width:120px;
-    border-radius:20px;
+img{
+width:130px;
+border-radius:25px;
 }
 
 h1{
-    margin:15px 0 10px;
+margin-top:15px;
 }
 
 p{
-    color:#d1d5db;
-    line-height:1.5;
+color:#ccc;
 }
 
 #joinBtn{
-    display:block;
-    margin-top:25px;
-    padding:16px;
-    background:#FFC107;
-    color:#000;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:40px;
-    font-size:22px;
-    transition:.3s;
+display:block;
+margin-top:25px;
+padding:15px;
+background:#FFC107;
+color:#000;
+font-weight:bold;
+text-decoration:none;
+border-radius:40px;
+font-size:20px;
 }
 
 #joinBtn:hover{
-    background:#ffb300;
+background:#ffb300;
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="card">
@@ -104,18 +103,13 @@ Join Telegram
 
 <script>
 document.getElementById("joinBtn").addEventListener("click", function(e){
-
     e.preventDefault();
 
-    fbq('track', 'subscribe', {}, function () {
-        window.open("https://t.me/chipsellerinstall", "_blank");
-    });
+    fbq('track', 'Subscribe');
 
-    // Fallback if callback doesn't fire
     setTimeout(function(){
-        window.open("https://t.me/chipsellerinstall", "_blank");
-    },1000);
-
+        window.open("https://t.me/chipsellerinstall","_blank");
+    },500);
 });
 </script>
 
