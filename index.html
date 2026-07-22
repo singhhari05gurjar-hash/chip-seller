@@ -84,8 +84,13 @@ background:#ffb300;
 
 <a href="https://t.me/chipsellerinstall"
    target="_blank"
-   onclick="fbq('track','Lead');">
-Join Telegram
+   onclick="event.preventDefault();
+            fbq('track', 'Lead');
+            setTimeout(() => {
+              window.open(this.href, '_blank');
+            }, 500);
+            return false;">
+    Join Telegram
 </a>
 
 </div>
